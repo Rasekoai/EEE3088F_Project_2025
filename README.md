@@ -1,2 +1,37 @@
- This project involves designing the power subsystem for the Micro-Mouse, which can drive two main motors and two auxiliary motors. 
- Moreover, this subsystem charges a 3.7V, 800mAh lipo battery, which will power the micro-mouse when it is unplugged from the power outlet. 
+EEE3088F 2025 Micromouse Power Module Project
+Overview
+This repository contains the design and implementation of the power subsystem for the Micro-mouse robot. The power subsystem is designed to efficiently manage power distribution to motors and provide USB connectivity for control interfaces.
+
+System Requirements
+Motor Control
+Bidirectional operation of up to 4 motors
+Motor specifications:
+2x main brushed DC motors - 200mA max current draw at 15V battery
+2x auxiliary motors - 50mA each
+Battery Management
+Battery: 4.2V Lithium ion battery
+INA219 implementation for monitoring the battery on the I2C Bus
+Charging: Support for battery charging from the 5V input
+Dual charging modes:
+Higher charging current for battery (600mA)
+Lower charging current for battery (100mA)
+USB Interface
+Integrated USB-C port for 5V output from the USB Host
+Power Control
+ON/OFF switch:
+OFF state: Battery draw <50μA
+ON state: Robot peak current is 1A
+Switch turns on both 5V and 3V3
+Project Structure
+This repository contains:
+
+Circuit schematic
+PCB design
+Datasheets for ICs used
+Assessment Information
+This project is part of a group assignment. While the interim and final design reports are assessed as a group, individual contributions to the design sections will be evaluated separately.
+
+Contributors
+Rasekoai Mokose - student no: MKSRAS001
+
+Innocent Mkhonta - student no: SPHINN001
