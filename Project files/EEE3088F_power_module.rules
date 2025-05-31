@@ -1,0 +1,88 @@
+
+(rules PCB _autosave-Innocent_schematic_without_fuse.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute off)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 1)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.9)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 3.2)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clearance 200.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 50.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um-kicad_default" "Via[0-1]_600:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "5V Out" "Net-(L2-Pad1)" "unconnected-(U3-AGND-Pad11)" "3.7V_out" GND "Net-(U3-FB)" "unconnected-(U3-OUT-Pad6)" "unconnected-(U3-NC-Pad7)"
+    "unconnected-(U3-SW-Pad3)" "unconnected-(U3-OUT-Pad5)" VBUS2 /CC2 /CC1 5V "Net-(R27-Pad2)" "Net-(C6-Pad1)"
+    "Net-(U6-AISEN)" 9V "Net-(U1-VBUS)" "Net-(R12-Pad1)" "Net-(U2-~{CHRG})" "Net-(LED1-K)" "Net-(LED2-K)" "Net-(U2-~{STDBY})"
+    "Net-(R3-Pad2)" "Net-(IC1-FB)" "Net-(U4-FB)" "Net-(R11-Pad1)" "Net-(U1-VDD)" "3V3 Out" "Net-(R24-Pad2)" "/FAST_CHARGE_CTRL"
+    "Net-(U2-PROG)" "Net-(Q5-D)" "Net-(Q1-B)" "Net-(Q2-Pad3)" "Net-(Q3-Pad3)" "Net-(Q4-B)" "/CTRL_EXT_LOAD1" "Net-(Q2-Pad1)"
+    "Net-(Q3-Pad1)" "/CTRL_EXT_LOAD2" "Net-(U7-BISEN)" "Net-(U7-AISEN)" "Net-(U6-BISEN)" "Net-(R28-Pad2)" "Net-(R29-Pad2)" "Net-(U4-LX2)"
+    "unconnected-(U4-PS-Pad7)" "Net-(U4-LX1)" "/EXT_LOAD1_OUT" "/EXT_LOAD2_OUT" "unconnected-(U1-PG-Pad10)" "unconnected-(U1-DP-Pad4)" "unconnected-(U1-DM-Pad5)" IC2
+    "/I2C1_SCL" "/I2C1_SDA" "/MOTOR2_A_OUT" "/MOTOR1_CTRL2" "Net-(U6-VINT)" "/MOTOR2_B_OUT" "/MOTOR1_CTRL1" "unconnected-(U6-~{FAULT}-Pad8)"
+    "/MOTOR2_CTRL1" "/MOTOR2_CTRL2" "/MOTOR1_B_OUT" "Net-(U6-VCP)" "/MOTOR1_A_OUT" "/MOTOR3_CTRL1" "Net-(U7-VCP)" "Net-(U7-VINT)"
+    "unconnected-(U7-~{FAULT}-Pad8)" "/MOTOR3_B_OUT" "/MOTOR4_CTRL1" "/MOTOR4_CTRL2" "/MOTOR4_B_OUT" "/MOTOR3_CTRL2" "/MOTOR4_A_OUT" "/MOTOR3_A_OUT"
+    "unconnected-(SW1-C-Pad1)" "unconnected-(IC1-PG-Pad1)" "Net-(IC1-SS)" "Net-(IC1-BST)" "Net-(IC1-SW)" "/USART2_RX" "/USART2_TX" "3.7V_in"
+    /RESV
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
